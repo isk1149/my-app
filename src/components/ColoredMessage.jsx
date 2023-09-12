@@ -9,3 +9,4 @@ export const ColoredMessage = (props) => {
 
     return <p style={contentStyle}>{children}</p>;
 };
+
