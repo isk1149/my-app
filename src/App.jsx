@@ -1,4 +1,7 @@
 import { ColoredMessage } from "./components/ColoredMessage";
+import { CssModules } from "./components/CssModules";
+import {StyledJsx} from "./components/StyledJsx";
+import {StyledComponents} from "./components/StyledComponents";
 import {useState} from "react";
 import { useEffect } from "react";
 
@@ -27,6 +30,10 @@ export const App = () => {
         <ColoredMessage color="pink">잘지냅니다!!?</ColoredMessage>
         <button onClick={onClickButton}>버튼</button>
         <p>{num}</p>
+        <hr/>
+        <CssModules/>
+        <StyledJsx/>
+        <StyledComponents/>
         </>
     );
 };
