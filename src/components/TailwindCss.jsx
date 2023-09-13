@@ -1,8 +1,16 @@
 
-/** package.json의 scrips 부분에 이걸로 대체
+/** 
+ *  tailwindcss 사용 시 package.json의 scrips 부분에 이걸로 대체
     "start": "craco start",
     "build": "craco build",
-    "test": "craco test", */
+    "test": "craco test", 
+    
+    일반적인 상황에서는 package.json의 scripts
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    */
+import {index} from "../index";
 
 export const TailwindCss = () => {
     return (
