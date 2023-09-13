@@ -4,10 +4,11 @@ import {StyledJsx} from "./components/StyledJsx";
 import {StyledComponents} from "./components/StyledComponents";
 import {Emotion} from "./components/Emotion";
 import { TailwindCss } from "./components/TailwindCss";
-import {useState, memo} from "react";
+import {useState, memo, useCallback} from "react";
 import { useEffect } from "react";
 import {Child1} from "./components/Child1";
 import {Child4} from "./components/Child4";
+import {Card} from "./components/Card"
 
 export const App = memo(() => {
     console.log("App 렌더링");
@@ -18,12 +19,25 @@ export const App = memo(() => {
         setNum(num + 1);
     };
 
+    const onClickReset = useCallback(() => {
+        setNum(0);
+    }, []);
+
+    const [isAdmin, setIsAdmin] = useState(false);
+
+    const onClickSwitch = () => {
+        setIsAdmin(!isAdmin)
+    };
+
     return (
         <>
         <button onClick={onClickButton}>버튼</button>
         <p>{num}</p>
-        <Child1/>
+        <Child1 onClickReset={onClickReset}/>
         <Child4/>
+        {isAdmin ? <span>관리자입니다</span> : <span>관리자가 아닙니다</span>}
+        <button onClick={onClickSwitch}>전환</button>
+        <Card isAdmin={isAdmin}/>
         </>
     );
 
